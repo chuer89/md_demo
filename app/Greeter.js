@@ -1,9 +1,17 @@
 //
-var config = require('./config.json');
+import config from './config.json';
+import React, {Component} from 'react';
+import styles from './style.scss';
 
-module.exports = function () {
-  var greet = document.createElement('div');
-  greet.textContent = config.greetText;
-  // greet.textContent = "H1i there and greetings!";
-  return greet;
+class Greeter extends Component{
+  render() {
+    return (
+      <div className={styles.root}>
+      -{config.greetText}-
+      <span>222</span>
+      </div>
+    )
+  }
 }
+
+export default Greeter;

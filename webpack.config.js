@@ -37,6 +37,23 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.css|\.scss$/,
+        use: [
+            {
+                loader: "style-loader"
+            }, {
+                loader: "css-loader",
+                options: {
+                    modules: true
+                }
+            }, {
+              loader: "sass-loader"
+            }, {
+              loader: "postcss-loader"
+            }
+        ]
+      },
+      {
         test: /\.md$/,
         use: [
             {
